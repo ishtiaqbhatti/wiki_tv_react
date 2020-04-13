@@ -1,0 +1,89 @@
+/** CUSTOMIZING BULMA **/
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+
+	// Setup your Custom Colors
+	$purple: hsl(275,87%,45%);
+	$purple-invert: findColorInvert($purple);
+
+
+// Add new color variables to the color map.
+@import "bulma/sass/utilities/derived-variables.sass";
+
+	$addColors: (
+	  "purple":($purple, $purple-invert),
+	);
+	$colors: map-merge($colors, $addColors);
+
+/** END CUSTOMIZATION **/
+
+
+// mobile: hasta 768px
+// tablet: de 769px
+// desktop: de 1024px
+// widescreen: de 1216px
+// fullhd: de 1408px
+
+
+// Borde del logo 46e8ba a55fc1
+@import "bulma/bulma";
+
+#root {
+	background-color: #f9f9f9
+	
+}
+
+
+$translationY: 20px;
+
+// Animaciones transiciones
+.fade-enter {
+	opacity: 0;
+  	transform: translate(0, $translationY);  
+ 
+}
+
+.fade-enter.fade-enter-active {
+	opacity: 1;
+	
+  transition: all 400ms ease-in-out;
+  transform: translate(0, 0); 
+  
+}
+
+.fade-enter-done {
+	
+}
+
+// No funciona por que la paginas no se superponen, haria falta agregar position absolute
+// .fade-exit {
+// 	opacity: 1;
+// 	transform: translate(0, 0); 
+// }
+
+// .fade-exit.fade-exit-active {
+// 	opacity: 0.1;
+//   	transition: all 400ms ease-in-out;	
+// 	transform: translate(0, $translationY); 
+// }
+
+
+.fade-exit-done {
+
+}
+
+
+/** Estilos Material icons **/
+	/* Rules for sizing the icon. */
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+
+	/* Rules for using icons as black on a light background. */
+	.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+	.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+	/* Rules for using icons as white on a dark background. */
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
